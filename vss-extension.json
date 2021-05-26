@@ -1,0 +1,73 @@
+{
+  "manifestVersion": 1,
+  "id": "printepiccards",
+  "version": "1.1.0",
+  "name": "Print Epic Cards",
+  "scopes": ["vso.work", "vso.extension.data_write"],
+  "description": "Prints Epic Cards for physical road mapping.",
+  "publisher": "feldermark",
+  "public": false,
+  "icons": {
+    "default": "img/logo.png"
+  },
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "categories": ["Azure Boards"],
+  "tags": ["print", "epic", "physical cards"],
+  "content": {
+    "details": {"path": "README.md"},
+    "license": {"path": "LICENSE"}
+  },
+  "branding": {
+    "color": "rgb(27,160,225)",
+    "theme": "dark"
+  },
+  "files": [
+    {
+      "path": "img",
+      "addressable": true
+    },
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "src/print-epic-cards.html",
+      "addressable": true
+    },
+    {
+      "path": "node_modules/vss-web-extension-sdk/lib",
+      "addressable": true,
+      "packagePath": "lib"
+    },
+    {
+      "path": "node_modules/office-ui-fabric-js/dist/js",
+      "addressable": true,
+      "packagePath": "lib/js"
+    },
+    {
+      "path": "node_modules/office-ui-fabric-js/dist/css",
+      "addressable": true,
+      "packagePath": "lib/css"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "printepiccards",
+      "type": "ms.vss-web.action",
+      "description": "Print Epic Cards.",
+      "targets": [
+        "ms.vss-work-web.work-item-context-menu",
+        "ms.vss-work-web.query-result-work-item-menu",
+        "ms.vss-work-web.work-item-toolbar-menu",
+        "ms.vss-work-web.backlog-item-menu"
+    ],
+      "properties": {
+        "uri": "src/print-epic-cards.html"
+      }
+    }
+  ]
+}

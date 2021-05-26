@@ -1,0 +1,45 @@
+{
+  "scripts": {
+    "build": "npm run lint && npm run clean && npm run webpack",
+    "build:dev": "npm run lint && npm run clean && npm run webpack:dev && npm run package:dev",
+    "webpack": "webpack --progress --colors --config webpack.config.js --output-path ./dist -p",
+    "webpack:dev": "webpack --progress --colors --config webpack.dev.js --output-path ./dist -p",
+    "postbuild": "npm run package",
+    "package": "tfx extension create",
+    "package:dev": "tfx extension create --overrides-file vss-extension.dev.json --rev-version",
+    "publish": "tfx extension publish",
+    "gallery-publish": "tfx extension publish --rev-version",
+    "clean": "rimraf ./dist && rimraf ./*.vsix",
+    "lint": "tslint -c tslint.json 'src/*.ts'"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.2",
+    "cpx": "^1.5.0",
+    "rimraf": "^2.6.1",
+    "tfx-cli": "^0.9.2",
+    "ts-loader": "^4.4.2",
+    "tslint": "^5.11.0",
+    "tslint-loader": "^3.6.0",
+    "typescript": "^2.8.3",
+    "webpack": "^4.16.3",
+    "webpack-cli": "^3.1.0",
+    "webpack-merge": "^4.1.4"
+  },
+  "dependencies": {
+    "@types/jquery": "^2.0.34",
+    "@types/q": "1.5.2",
+    "azure-devops-node-api": "^10.2.2",
+    "handlebars": "^4.7.7",
+    "handlebars-loader": "^1.7.1",
+    "office-ui-fabric-js": "^1.4.0",
+    "vss-web-extension-sdk": "^5.141.0"
+  },
+  "name": "print-epic-cards",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Prints Epic Cards for physical road mapping",
+  "main": "webpack.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "moduleResolution": "node",
+    "lib": [ "esnext", "dom" ],
+    "target": "es5",
+    "rootDir": "src/",
+    "outDir": "dist/",
+    "types": [
+      "vss-web-extension-sdk"
+    ]
+  },
+  "files": [
+    "src/print-epic-cards.ts"
+  ]
+}

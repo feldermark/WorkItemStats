@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="../lib/VSS.SDK.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: "-apple-system", BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Ubuntu, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 100%;
+            overflow-wrap: break-word;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        td, th {
+            border: 1px solid lightgray;
+            text-align: left;
+            padding: 8px;
+        }
+        div:empty {
+            display:none;
+        }
+        @page { 
+            size: auto;  
+            margin: 0mm; 
+        }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+        // Initialize framework
+        VSS.init({
+            explicitNotifyLoaded: true,
+            usePlatformScripts: true
+        });
+        // Load main entry point for extension
+        VSS.require(["dist/printepiccards"], function (printepiccards) {
+            // Loading succeeded
+            VSS.notifyLoadSucceeded();
+        });
+    </script>
+</body>
+
+</html>
