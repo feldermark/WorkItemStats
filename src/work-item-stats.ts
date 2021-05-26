@@ -27,24 +27,41 @@ interface IActionContext {
 
 const workitemstats = {
   getMenuItems: (context: any) => {
+    const wids = context.workItemIds;
+
     // Uses the plural of cards if more than one are selected
-    let menuItemText = "One Selected";
-    if (context.workItemIds && context.workItemIds.length > 1) {
-      menuItemText = "Multiple Selected";
-    }
+    // let menuItemText = "One Selected";
+    // if (wids && wids.length > 1) {
+    //   menuItemText = "Multiple Selected";
+    // }
 
-    return [
-      {
-        // action: (actionContext: IActionContext) => {
-        //   const wids = actionContext.workItemIds || actionContext.ids || [actionContext.workItemId || actionContext.id];
+    // console.log(wids.length + "selected");
+    // console.log(context);
+    // console.log(wids);
 
-        //   return getWorkItems(wids)
-        //     .then(workItems => getWorkItemStats(workItems))
-        // },
-        icon: "img/icon.png",
-        text: menuItemText,
-        title: menuItemText
-      } as IContributedMenuItem];
+    // getWorkItems(wids).then(workItems => workItems.reduce((sum, current) => sum + current.fields["System.StoryPoints"], 0));
+    // menuItemText = sum;
+
+    return getWorkItems(wids).then(workItems => {
+      let workItemSum: number = 0;
+      workItemSum = workItems.reduce((sum, current) => sum + current.fields["Microsoft.VSTS.Scheduling.StoryPoints"], 0);
+
+      let menuItemText = workItemSum + " story points";
+      if (workItemSum === 1) {
+        menuItemText = workItemSum + " story point";
+      }
+
+      // Add if here to not return a menu item if we have no points?
+
+      return [
+        {
+          // action: // This has no action right now
+          icon: "img/icon.png",
+          text: menuItemText,
+          // title: menuItemText,
+          disabled: true // Disabling this button until I decide to make it do something. It could show an popup with additional stats
+        } as IContributedMenuItem];
+    });
   }
 };
 
@@ -56,10 +73,6 @@ function getWorkItems(wids: number[]): IPromise<Models.WorkItem[]> {
     undefined,
     Models.WorkItemExpand.All
   );
-}
-
-function getWorkItemStats(workItems: Models.WorkItem[]): number {
-  return 1;
 }
 
 VSS.register(
