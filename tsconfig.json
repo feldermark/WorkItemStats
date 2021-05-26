@@ -11,6 +11,6 @@
     ]
   },
   "files": [
-    "src/print-epic-cards.ts"
+    "src/work-item-stats.ts"
   ]
 }

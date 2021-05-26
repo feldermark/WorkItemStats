@@ -34,10 +34,10 @@
     "office-ui-fabric-js": "^1.4.0",
     "vss-web-extension-sdk": "^5.141.0"
   },
-  "name": "print-epic-cards",
+  "name": "work-item-stats",
   "private": true,
   "version": "1.0.0",
-  "description": "Prints Epic Cards for physical road mapping",
+  "description": "Puts stats of selected work items in the context menu",
   "main": "webpack.config.js",
   "keywords": [],
   "author": "",

@@ -4,7 +4,7 @@ var webpack = require("webpack");
 module.exports = {
     target: "web",
     entry: {
-        printepiccards: "./src/print-epic-cards.ts"
+        workitemstats: "./src/work-item-stats.ts"
     },
     devtool: "source-map",
     output: {

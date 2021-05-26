@@ -3,7 +3,6 @@ import Models = require("TFS/WorkItemTracking/Contracts");
 import Q = require("q");
 import { StatusIndicator } from "VSS/Controls/StatusIndicator";
 import { validateGroup } from "VSS/Controls/Validation";
-const epicCardTemplate = require("epic-card.handlebars");
 
 const extensionContext = VSS.getExtensionContext();
 const client = WITClient.getClient();
@@ -26,11 +25,11 @@ interface IActionContext {
   columns?: string[];
 }
 
-const printEpicCards = {
+const workitemstats = {
   getMenuItems: (context: any) => {
-    // Only shows if all selected cards are epics
+    // Only shows if all selected cards are user stories
     const types = getTypesFromContext(context);
-    if (types.every((type) => ["Epic"].indexOf(type) >= 0)) {
+    if (types.every((type) => ["User Story"].indexOf(type) >= 0)) {
 
       // Uses the plural of cards if more than one are selected
       let menuItemText = "Print Epic Card";

@@ -1,10 +1,10 @@
 {
   "manifestVersion": 1,
-  "id": "printepiccards",
-  "version": "1.1.0",
-  "name": "Print Epic Cards",
+  "id": "workitemstats",
+  "version": "1.0.0",
+  "name": "Work Item Stats",
   "scopes": ["vso.work", "vso.extension.data_write"],
-  "description": "Prints Epic Cards for physical road mapping.",
+  "description": "Puts stats of selected work items in the context menu",
   "publisher": "feldermark",
   "public": false,
   "icons": {
@@ -16,7 +16,7 @@
     }
   ],
   "categories": ["Azure Boards"],
-  "tags": ["print", "epic", "physical cards"],
+  "tags": ["story points", "stats", "sum","work item","user story","context menu"],
   "content": {
     "details": {"path": "README.md"},
     "license": {"path": "LICENSE"}
@@ -35,7 +35,7 @@
       "addressable": true
     },
     {
-      "path": "src/print-epic-cards.html",
+      "path": "src/work-item-stats.html",
       "addressable": true
     },
     {
@@ -56,9 +56,9 @@
   ],
   "contributions": [
     {
-      "id": "printepiccards",
+      "id": "workitemstats",
       "type": "ms.vss-web.action",
-      "description": "Print Epic Cards.",
+      "description": "Puts stats of selected work items in the context menu",
       "targets": [
         "ms.vss-work-web.work-item-context-menu",
         "ms.vss-work-web.query-result-work-item-menu",
@@ -66,7 +66,7 @@
         "ms.vss-work-web.backlog-item-menu"
     ],
       "properties": {
-        "uri": "src/print-epic-cards.html"
+        "uri": "src/work-item-stats.html"
       }
     }
   ]
