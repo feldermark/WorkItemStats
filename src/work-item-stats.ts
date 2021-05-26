@@ -44,7 +44,7 @@ const workitemstats = {
 
     return getWorkItems(wids).then(workItems => {
       let workItemSum: number = 0;
-      workItemSum = workItems.reduce((sum, current) => sum + current.fields["Microsoft.VSTS.Scheduling.StoryPoints"], 0);
+      workItemSum = workItems.filter(workItem => workItem.fields["Microsoft.VSTS.Scheduling.StoryPoints"] !== undefined).reduce((sum, current) => sum + current.fields["Microsoft.VSTS.Scheduling.StoryPoints"], 0);
 
       let menuItemText = workItemSum + " story points";
       if (workItemSum === 1) {
