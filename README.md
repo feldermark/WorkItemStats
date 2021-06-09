@@ -14,7 +14,3 @@ https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=azure
 
 ## Credits
 - Based on [Print Epic Cards](https://github.com/feldermark/PrintEpicCards)
-
-# To Do
-- Need to get new icon and logo. Actually probably don't need an icon
-- get everything renamed
