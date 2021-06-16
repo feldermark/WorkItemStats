@@ -1,7 +1,11 @@
 # Work Item Stats
 
-Shows the count and story point sum of work items in the context menu
+Shows the count and story point sum of work items in the context menu.
+I was tired of trying to add up story points in my head or open the items in Excel during planning. So I wrote this to quickly just show the sum of the story points for selected items in the context menu.
 
+![Context Menu](img/Screenshot1.jpg)
+
+# Notes
 ## How To Build Extensions for Azure DevOps
 https://docs.microsoft.com/en-us/azure/devops/extend/get-started/node?view=azure-devops
 

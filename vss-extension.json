@@ -1,12 +1,12 @@
 {
   "manifestVersion": 1,
   "id": "workitemstats",
-  "version": "1.0.10",
+  "version": "1.2.0",
   "name": "Work Item Stats",
   "scopes": ["vso.work", "vso.extension.data_write"],
   "description": "Puts stats of selected work items in the context menu",
   "publisher": "feldermark",
-  "public": false,
+  "public": true,
   "icons": {
     "default": "img/logo.png"
   },
@@ -21,8 +21,20 @@
     "details": {"path": "README.md"},
     "license": {"path": "LICENSE"}
   },
+  "links": {
+    "support": {
+      "uri": "https://github.com/feldermark/WorkItemStats/issues"
+    },
+    "repository": {
+      "uri": "https://github.com/feldermark/WorkItemStats"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/feldermark/WorkItemStats"
+  },
   "branding": {
-    "color": "rgb(27,160,225)",
+    "color": "rgb(57,132,168)",
     "theme": "dark"
   },
   "files": [
