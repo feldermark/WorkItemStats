@@ -1,5 +1,6 @@
 var path = require("path");
 var webpack = require("webpack");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     target: "web",
@@ -7,6 +8,11 @@ module.exports = {
         workitemstats: "./src/work-item-stats.ts"
     },
     devtool: "source-map",
+    devServer: {
+        https: true,
+        port: 3000,
+        publicPath: "/dist/"
+    },
     output: {
         filename: "[name].js",
         libraryTarget: "amd",
@@ -33,14 +39,11 @@ module.exports = {
                     }
                 ]
             },
-            { 
-                test: /\.handlebars$/, 
-                loader: "handlebars-loader" 
-            },
             {
                 test: /\.tsx?$/, 
                 loader: "ts-loader" 
             }
         ]
-    }
+    },
+    plugins: [new CopyWebpackPlugin([{ from: "**/*.html", context: "src" }])]
 }

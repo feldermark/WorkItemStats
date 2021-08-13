@@ -40,10 +40,26 @@ const workitemstats = {
         }
         return [
           {
-            // action: // This has no action right now
+            action: (actionContext: IActionContext) => {
+              VSS.getService(VSS.ServiceIds.Dialog).then(function(dialogService: IHostDialogService) {
+                // Build absolute contribution ID for dialogContent
+                let extensionCtx = VSS.getExtensionContext();
+                let contributionId = extensionCtx.publisherId + "." + extensionCtx.extensionId + ".work-item-stats_popup";
+
+                // Show dialog
+                let dialogOptions = {
+                    title: "Work Item Stats",
+                    width: 600,
+                    height: 300,
+                    buttons: null
+                };
+
+                dialogService.openDialog(contributionId, dialogOptions);
+              });
+            },
             icon: "img/icon.png",
             text: menuItemText,
-            disabled: true
+            disabled: false
           } as IContributedMenuItem];
       }
       catch (e) {

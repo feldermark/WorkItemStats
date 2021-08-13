@@ -1,12 +1,10 @@
 {
   "manifestVersion": 1,
-  "id": "workitemstats",
-  "version": "1.2.0",
+  "version": "1.2.16",
   "name": "Work Item Stats",
   "scopes": ["vso.work", "vso.extension.data_write"],
   "description": "Puts stats of selected work items in the context menu",
   "publisher": "feldermark",
-  "public": true,
   "icons": {
     "default": "img/logo.png"
   },
@@ -77,6 +75,15 @@
     ],
       "properties": {
         "uri": "src/work-item-stats.html"
+      }
+    },
+    {
+      "id": "work-item-stats_popup",
+      "type": "ms.vss-web.control",
+      "description": "Displays additional stats for the selected work items",
+      "targets": [],
+      "properties": {
+          "uri": "src/work-item-stats_popup.html"
       }
     }
   ]
